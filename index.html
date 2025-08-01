@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boutik Telecom</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="images/logo.jpg" alt="Logo Boutik Telecom" class="logo">
+      <h1>Boutique Telecom</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#produits">Produits</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#commande">Commande</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="accueil">
+    <h2>Bienvenue chez Boutique Télécom</h2>
+    <p>Votre boutique de référence pour le matériel électronique et télécom !</p>
+  </section>
+
+  <section id="produits">
+    <h2>Nos Produits</h2>
+    <div class="produits">
+      <div class="carte-produit">
+        <img src="images/routeur.jpg" alt="Routeur Wi-Fi">
+        <h3>Routeur Wi-Fi</h3>
+        <p>Routeur haute performance - 25 000 FCFA</p>
+      </div>
+      <div class="carte-produit">
+        <img src="images/fer_souder.jpg" alt="Fer à souder">
+        <h3>Fer à souder</h3>
+        <p>Idéal pour vos montages électroniques - 5 000 FCFA</p>
+      </div>
+      <div class="carte-produit">
+        <img src="images/multimetre.jpg" alt="Multimètre">
+        <h3>Multimètre numérique</h3>
+        <p>Mesure précise - 8 000 FCFA</p>
+      </div>
+      <div class="carte-produit">
+        <img src="images/cabale_rj.jpg" alt="Câble RJ45">
+        <h3>Câble RJ45</h3>
+        <p>Câble Ethernet haute qualité - 2 500 FCFA</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="galerie">
+    <h2>Galerie</h2>
+    <div class="galerie">
+      <img src="images/routeur.jpg" alt="Routeur">
+      <img src="images/fer_souder.jpg" alt="Fer à souder">
+      <img src="images/multimetre.jpg" alt="Multimètre">
+      <img src="images/cabale_rj.jpg" alt="Câble RJ45">
+    </div>
+  </section>
+
+  <section id="commande">
+    <h2>Passer une commande</h2>
+    <form>
+      <label for="nom">Nom :</label>
+      <input type="text" id="nom" name="nom" required>
+
+      <label for="contact">Contact :</label>
+      <input type="text" id="contact" name="contact" required>
+
+      <label for="produit">Produit :</label>
+      <select id="produit" name="produit" required>
+        <option value="">-- Choisir un produit --</option>
+        <option value="Routeur Wi-Fi">Routeur Wi-Fi</option>
+        <option value="Fer à souder">Fer à souder</option>
+        <option value="Multimètre">Multimètre</option>
+        <option value="Câble RJ45">Câble RJ45</option>
+      </select>
+
+      <button type="submit">Envoyer</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Boutik Telecom. Tous droits réservés.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
