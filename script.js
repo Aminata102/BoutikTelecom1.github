@@ -1,30 +1,45 @@
-// ----- SCRIPT RESPONSIVE POUR MENU -----
+// MENU BURGER (responsive)
+const menuToggle = document.getElementById('menu-toggle');
+const menu = document.getElementById('menu');
 
-// Sélection des éléments
-const toggleBtn = document.getElementById("menu-toggle");
-const menu = document.getElementById("menu");
-const menuLinks = document.querySelectorAll("#menu li a");
+menuToggle.addEventListener('click', () => {
+  menu.classList.toggle('open');
+});
 
-// Toggle menu
-if (toggleBtn) {
-  toggleBtn.addEventListener("click", () => {
-    menu.classList.toggle("show");
-    toggleBtn.classList.toggle("active");
-  });
-}
+// Accessibilité clavier
+menuToggle.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    menu.classList.toggle('open');
+  }
+});
 
-// Fermer le menu après un clic sur un lien
-menuLinks.forEach(link => {
-  link.addEventListener("click", () => {
-    menu.classList.remove("show");
-    toggleBtn.classList.remove("active");
+// DÉFILEMENT FLUIDE
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth'
+      });
+      // Fermer le menu après clic (mobile)
+      menu.classList.remove('open');
+    }
   });
 });
 
-// Fermer si on clique en dehors du menu
-window.addEventListener("click", e => {
-  if (!menu.contains(e.target) && !toggleBtn.contains(e.target)) {
-    menu.classList.remove("show");
-    toggleBtn.classList.remove("active");
+// VALIDATION DU FORMULAIRE DE COMMANDE
+const form = document.querySelector('form');
+form.addEventListener('submit', function (e) {
+  const nom = document.getElementById('nom').value.trim();
+  const contact = document.getElementById('contact').value.trim();
+  const produit = document.getElementById('produit').value;
+
+  if (nom === "" || contact === "" || produit === "") {
+    e.preventDefault();
+    alert("Veuillez remplir tous les champs du formulaire.");
+  } else {
+    alert("Commande envoyée avec succès !");
   }
 });
