@@ -1,13 +1,17 @@
-// Sélection des éléments du DOM
+// ----- SCRIPT RESPONSIVE POUR MENU -----
+
+// Sélection des éléments
 const toggleBtn = document.getElementById("menu-toggle");
 const menu = document.getElementById("menu");
 const menuLinks = document.querySelectorAll("#menu li a");
 
-// Afficher / cacher le menu au clic sur le bouton
-toggleBtn.addEventListener("click", () => {
-  menu.classList.toggle("show");
-  toggleBtn.classList.toggle("active");
-});
+// Toggle menu
+if (toggleBtn) {
+  toggleBtn.addEventListener("click", () => {
+    menu.classList.toggle("show");
+    toggleBtn.classList.toggle("active");
+  });
+}
 
 // Fermer le menu après un clic sur un lien
 menuLinks.forEach(link => {
@@ -17,9 +21,9 @@ menuLinks.forEach(link => {
   });
 });
 
-// (Optionnel) Fermer le menu si on clique en dehors
-document.addEventListener("click", (event) => {
-  if (!menu.contains(event.target) && !toggleBtn.contains(event.target)) {
+// Fermer si on clique en dehors du menu
+window.addEventListener("click", e => {
+  if (!menu.contains(e.target) && !toggleBtn.contains(e.target)) {
     menu.classList.remove("show");
     toggleBtn.classList.remove("active");
   }
