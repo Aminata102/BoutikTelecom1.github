@@ -1,195 +1,198 @@
-/* Général */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* style.css */
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
   line-height: 1.6;
+  background-color: #f4f4f4;
 }
 
-/* En-tête */
-header {
-  background-color: #1d3557;
+/* --- Accueil avec image de fond --- */
+#accueil {
+  background: url("images/fond-telecom.jpg") no-repeat center center/cover;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
-  padding: 20px;
+  text-shadow: 1px 1px 4px black;
+}
+
+.accueil-contenu {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 600px;
+  text-align: center;
+}
+
+.accueil-contenu h2 {
+  font-size: 2rem;
+}
+
+.accueil-contenu span {
+  color: #00ccff;
+}
+
+.btn-voir {
+  background: #00ccff;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.btn-voir:hover {
+  background: #009ec9;
+}
+
+/* --- Logo et menu --- */
+header {
+  background-color: #004080;
+  color: #fff;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.logo-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+.logo {
+  width: 80px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
 
-.logo-container .logo {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 2px solid #fff;
-}
-
-header h1 {
-  font-size: 2rem;
-  margin: 0;
+/* --- Menu responsive --- */
+nav {
+  background: #004080;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 nav ul {
-  list-style: none;
   display: flex;
   justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
   flex-wrap: wrap;
-  margin-top: 15px;
-  gap: 20px;
 }
 
-nav a {
+nav ul li a {
+  display: block;
+  padding: 1rem;
   color: white;
   text-decoration: none;
-  font-weight: bold;
-  padding: 8px 12px;
-  transition: background 0.3s;
 }
 
-nav a:hover {
-  background-color: #457b9d;
-  border-radius: 5px;
+nav ul li a:hover {
+  background-color: #003366;
 }
 
-/* Sections */
-section {
-  padding: 40px 20px;
-  text-align: center;
+.menu-toggle {
+  display: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  text-align: right;
 }
 
-section h2 {
-  margin-bottom: 20px;
-  color: #1d3557;
-  font-size: 1.8rem;
-}
-
-/* Produits */
+/* --- Produits --- */
 .produits {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-  margin-top: 20px;
+  gap: 20px;
 }
 
 .carte-produit {
-  background: white;
-  padding: 15px;
+  background-color: #e9ecef;
+  padding: 1rem;
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
-}
-
-.carte-produit:hover {
-  transform: translateY(-5px);
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
 
 .carte-produit img {
   width: 100%;
   height: 150px;
   object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
-.carte-produit h3 {
-  margin-bottom: 5px;
-  color: #333;
-}
-
-/* Galerie */
-.galerie {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-}
-
-.galerie img {
-  width: 200px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-}
-
-/* Formulaire */
-form {
-  max-width: 400px;
-  margin: 0 auto;
-  text-align: left;
-  background: white;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
-}
-
-form label {
-  display: block;
-  margin-top: 15px;
-  font-weight: bold;
-}
-
-form input,
-form select,
-form button {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
   border-radius: 5px;
 }
 
+/* --- Galerie --- */
+.galerie {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.galerie img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* --- Formulaire --- */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  max-width: 400px;
+  margin: auto;
+}
+
+form input, form select, form button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
 form button {
-  margin-top: 20px;
-  background-color: #1d3557;
-  color: white;
+  background-color: #004080;
+  color: #fff;
+  font-weight: bold;
   border: none;
   cursor: pointer;
-  transition: background 0.3s;
 }
 
 form button:hover {
-  background-color: #457b9d;
+  background-color: #003366;
 }
 
-/* Pied de page */
+/* --- Footer --- */
 footer {
-  background-color: #1d3557;
-  color: white;
+  background-color: #222;
+  color: #fff;
   text-align: center;
-  padding: 15px 0;
-  margin-top: 40px;
+  padding: 1rem;
+  margin-top: 2rem;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  header {
-    text-align: center;
-  }
-
-  .logo-container {
-    flex-direction: column;
-  }
-
+/* --- Responsive --- */
+@media (max-width: 768px) {
   nav ul {
+    display: none;
     flex-direction: column;
-    gap: 10px;
+    background: #004080;
   }
 
-  .galerie img {
-    width: 100%;
-    height: auto;
-}
+  nav ul.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
 }

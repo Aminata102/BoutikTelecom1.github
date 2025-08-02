@@ -14,7 +14,8 @@
       <h1>Boutique Telecom</h1>
     </div>
     <nav>
-      <ul>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      <ul id="menu">
         <li><a href="#accueil">Accueil</a></li>
         <li><a href="#produits">Produits</a></li>
         <li><a href="#galerie">Galerie</a></li>
@@ -24,10 +25,11 @@
   </header>
 
   <section id="accueil">
-    <h2>Bienvenue chez Boutique Télécom</h2>
-    <p>Votre boutique de référence pour le matériel électronique et télécom !</p>
-    <p><strong>Adresse :</strong> Mbour, Marché central</p>
-    <p><strong>Contact :</strong> 77 056 73 92</p>
+    <div class="accueil-contenu">
+      <h2>Bienvenue chez <span>Boutique Télécom</span></h2>
+      <p>Votre boutique de référence pour le matériel électronique et télécom</p>
+      <a href="#produits" class="btn-voir">Voir les produits</a>
+    </div>
   </section>
 
   <section id="produits">
@@ -135,5 +137,7 @@
     <p><strong>Adresse :</strong> Mbour, Marché central</p>
     <p><strong>Téléphone :</strong> 77 056 73 92</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

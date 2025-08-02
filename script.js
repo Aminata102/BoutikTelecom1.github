@@ -1,13 +1,26 @@
-document.getElementById("formCommande").addEventListener("submit", function (e) {
-  e.preventDefault();
-  const nom = this.nom.value;
-  const tel = this.tel.value;
-  const produit = this.produit.value;
+// Sélection des éléments du DOM
+const toggleBtn = document.getElementById("menu-toggle");
+const menu = document.getElementById("menu");
+const menuLinks = document.querySelectorAll("#menu li a");
 
-  // Correction : utilisation des backticks (`) pour le template literal
-  const message = `Merci ${nom} ! Votre commande pour le produit "${produit}" a été enregistrée. Nous vous contacterons au ${tel}.`;
-  document.getElementById("confirmation").textContent = message;
+// Afficher / cacher le menu au clic sur le bouton
+toggleBtn.addEventListener("click", () => {
+  menu.classList.toggle("show");
+  toggleBtn.classList.toggle("active");
+});
 
-  // Réinitialiser le formulaire
-  this.reset();
+// Fermer le menu après un clic sur un lien
+menuLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    menu.classList.remove("show");
+    toggleBtn.classList.remove("active");
+  });
+});
+
+// (Optionnel) Fermer le menu si on clique en dehors
+document.addEventListener("click", (event) => {
+  if (!menu.contains(event.target) && !toggleBtn.contains(event.target)) {
+    menu.classList.remove("show");
+    toggleBtn.classList.remove("active");
+  }
 });
