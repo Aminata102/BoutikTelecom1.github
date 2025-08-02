@@ -1,209 +1,219 @@
-/* ----------- RESET ----------- */
+/* Reset de base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
 }
 
+/* Corps */
 body {
+  font-family: Arial, sans-serif;
   line-height: 1.6;
-  background: #f4f4f4;
+  background-color: #f4f4f4;
   color: #333;
-  text-align: center;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* ----------- HEADER ----------- */
+/* Header */
 header {
-  background-color: #003366;
+  background-color: #004080;
   color: white;
-  padding: 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  padding: 15px 0;
 }
 
 .logo-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 15px;
+  margin-bottom: 10px;
 }
 
 .logo {
+  width: 50px;
   height: 50px;
-  border-radius: 10px;
+  object-fit: contain;
 }
 
-nav {
-  margin-top: 1rem;
+header h1 {
+  font-size: 1.8rem;
+  text-align: center;
 }
 
+/* Menu navigation */
 nav ul {
+  list-style: none;
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
-  list-style: none;
-  transition: max-height 0.4s ease;
+  background-color: #0066cc;
+  padding: 10px 0;
+}
+
+nav ul li {
+  margin: 0 20px;
 }
 
 nav ul li a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s;
+  padding: 8px 12px;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
 }
 
 nav ul li a:hover {
-  color: #ffcc00;
+  background-color: #004080;
 }
 
-/* Menu responsive */
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: white;
+/* Titres sections */
+h2 {
+  text-align: center;
+  margin: 20px 0;
+  color: #004080;
 }
 
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  nav ul {
-    flex-direction: column;
-    max-height: 0;
-    overflow: hidden;
-    background-color: #003366;
-    margin-top: 1rem;
-    padding: 0 1rem;
-  }
-
-  nav ul.show {
-    max-height: 500px;
-  }
-}
-
-/* ----------- SECTIONS ----------- */
-section {
-  padding: 2rem 1rem;
+/* Section Accueil */
+#accueil {
+  max-width: 900px;
+  margin: 20px auto;
   text-align: center;
 }
 
-section h2 {
-  text-align: center;
-  margin-bottom: 1rem;
-  font-size: 2.2rem;
-  color: #003366;
-}
-
-.accueil-contenu {
-  background: url("images/bg.jpg") no-repeat center center/cover;
-  padding: 5rem 1rem;
-  color: white;
-  text-shadow: 1px 1px 4px black;
-  text-align: center;
-}
-
-.accueil-contenu h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.accueil-contenu .btn-voir {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.75rem 1.5rem;
-  background-color: #ffcc00;
-  color: #003366;
-  font-weight: bold;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-.accueil-contenu .btn-voir:hover {
-  background-color: #e6b800;
-}
-
-.produits, .galerie {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
+/* Produits */
+.produits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto 40px;
 }
 
 .carte-produit {
-  background-color: white;
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  width: 220px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.carte-produit:hover {
+  transform: translateY(-5px);
+}
+
+.carte-produit img {
+  width: 100%;
+  height: 140px;
+  object-fit: contain;
+  margin-bottom: 10px;
 }
 
 .carte-produit h3 {
-  margin-top: 0.5rem;
-  color: #003366;
+  margin-bottom: 8px;
+  color: #004080;
 }
 
-/* ----------- FORMULAIRE ----------- */
+/* Galerie */
+.galerie {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  max-width: 1000px;
+  margin: 0 auto 40px;
+}
+
+.galerie img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.galerie img:hover {
+  transform: scale(1.05);
+}
+
+/* Formulaire commande */
 form {
-  max-width: 500px;
-  margin: 0 auto;
+  max-width: 400px;
+  margin: 0 auto 40px;
   background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  text-align: left;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 form label {
   display: block;
-  text-align: left;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-form input,
-form select {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-form button {
-  margin-top: 1.5rem;
-  padding: 0.7rem 1.5rem;
-  background-color: #003366;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+  margin-bottom: 6px;
   font-weight: bold;
 }
 
-form button:hover {
-  background-color: #002244;
+form input, form select {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
 }
 
-/* ----------- FOOTER ----------- */
+form button {
+  width: 100%;
+  background-color: #004080;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #00264d;
+}
+
+/* Footer */
 footer {
-  background-color: #003366;
+  background-color: #004080;
   color: white;
   text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
+  padding: 15px 10px;
+  font-size: 0.9rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
-footer p {
-  margin: 0.3rem 0;
+/* Responsive (mobile) */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    margin: 8px 0;
+  }
+
+  .produits {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .carte-produit {
+    width: 90%;
+  }
+
+  .galerie img {
+    height: auto;
+  }
+
+  footer {
+    position: static;
+  }
 }
