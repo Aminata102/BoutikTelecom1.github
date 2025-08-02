@@ -31,44 +31,75 @@
   <p>Votre boutique de référence pour le matériel électronique et télécom !</p>
   <p><strong>Adresse :</strong> Mbour, Marché central</p>
   <p><strong>Contact :</strong> 77 056 73 92</p>
-  <button class="menu-btn" onclick="document.getElementById('produits').scrollIntoView({behavior: 'smooth'})">Voir nos produits</button>
+  <button class="menu-btn" onclick="document.getElementById('liste-produits').scrollIntoView({behavior: 'smooth'})">Voir la liste des produits</button>
 </section>
 
 <section id="produits">
   <h2>Nos Produits</h2>
-
-  <input type="text" id="recherche-produit" placeholder="Rechercher un produit..." onkeyup="filtrerProduits()" />
-
   <div class="produits">
-    <div class="carte-produit"><img src="images/routeur.jpg" alt="Routeur Wi-Fi"><h3>Routeur Wi-Fi</h3><p>25 000 FCFA</p></div>
-    <div class="carte-produit"><img src="images/fer_souder.jpg" alt="Fer à souder"><h3>Fer à souder</h3><p>5 000 FCFA</p></div>
-    <div class="carte-produit"><img src="images/multimetre.jpg" alt="Multimètre"><h3>Multimètre numérique</h3><p>8 000 FCFA</p></div>
-    <div class="carte-produit"><img src="images/cabale_rj.jpg" alt="Câble RJ45"><h3>Câble RJ45</h3><p>2 500 FCFA</p></div>
-    <div class="carte-produit"><img src="images/telephone.jpg" alt="Téléphone"><h3>Téléphone</h3><p>85 000 FCFA</p></div>
-    <div class="carte-produit"><img src="images/ventilateur.jpg" alt="Ventilateur"><h3>Ventilateur</h3><p>25 000 FCFA</p></div>
-    <div class="carte-produit"><img src="images/climatiseur.jpg" alt="Climatiseur"><h3>Climatiseur</h3><p>150 000 FCFA</p></div>
-    <div class="carte-produit"><img src="images/television.jpg" alt="Télévision"><h3>Télévision</h3><p>75 000 FCFA</p></div>
-    <div class="carte-produit"><img src="images/frigo.jpg" alt="Frigo"><h3>Réfrigérateur</h3><p>120 000 FCFA</p></div>
-    <div class="carte-produit"><img src="images/ordinateur.jpg" alt="Ordinateur Portable"><h3>Ordinateur Portable</h3><p>190 000 FCFA</p></div>
+    <div class="carte-produit" id="routeur-wifi">
+      <img src="images/routeur.jpg" alt="Routeur Wi-Fi" />
+      <h3>Routeur Wi-Fi</h3>
+      <p>Routeur haute performance - 25 000 FCFA</p>
+    </div>
+    <div class="carte-produit" id="fer-a-souder">
+      <img src="images/fer_souder.jpg" alt="Fer à souder" />
+      <h3>Fer à souder</h3>
+      <p>Idéal pour vos montages électroniques - 5 000 FCFA</p>
+    </div>
+    <div class="carte-produit" id="multimetre-numerique">
+      <img src="images/multimetre.jpg" alt="Multimètre" />
+      <h3>Multimètre numérique</h3>
+      <p>Mesure précise - 8 000 FCFA</p>
+    </div>
+    <div class="carte-produit" id="cable-rj45">
+      <img src="images/cabale_rj.jpg" alt="Câble RJ45" />
+      <h3>Câble RJ45</h3>
+      <p>Câble Ethernet haute qualité - 2 500 FCFA</p>
+    </div>
+    <div class="carte-produit" id="telephone">
+      <img src="images/telephone.jpg" alt="Téléphone" />
+      <h3>Téléphone</h3>
+      <p>Smartphone dernière génération - 85 000 FCFA</p>
+    </div>
+    <div class="carte-produit" id="ventilateur">
+      <img src="images/ventilateur.jpg" alt="Ventilateur" />
+      <h3>Ventilateur</h3>
+      <p>Ventilateur électrique puissant - 25 000 FCFA</p>
+    </div>
+    <div class="carte-produit" id="climatiseur">
+      <img src="images/climatiseur.jpg" alt="Climatiseur" />
+      <h3>Climatiseur</h3>
+      <p>Climatiseur Split silencieux - 150 000 FCFA</p>
+    </div>
+    <div class="carte-produit" id="television">
+      <img src="images/television.jpg" alt="Télévision" />
+      <h3>Télévision</h3>
+      <p>TV LED HD 32 pouces - 75 000 FCFA</p>
+    </div>
+    <div class="carte-produit" id="refrigerateur">
+      <img src="images/frigo.jpg" alt="Frigo" />
+      <h3>Réfrigérateur</h3>
+      <p>Frigo double porte - 120 000 FCFA</p>
+    </div>
+    <div class="carte-produit" id="ordinateur-portable">
+      <img src="images/ordinateur.jpg" alt="Ordinateur portable" />
+      <h3>Ordinateur Portable</h3>
+      <p>Core i5, 8Go RAM, 256Go SSD - 190 000 FCFA</p>
+    </div>
   </div>
 
-  <div style="text-align: center; margin-top: 20px;">
-    <button class="menu-btn" onclick="document.querySelector('.liste-produits').scrollIntoView({behavior: 'smooth'})">
-      Voir la liste des produits
-    </button>
-  </div>
-
-  <ul class="liste-produits">
-    <li>Routeur Wi-Fi</li>
-    <li>Fer à souder</li>
-    <li>Multimètre</li>
-    <li>Câble RJ45</li>
-    <li>Téléphone</li>
-    <li>Ventilateur</li>
-    <li>Climatiseur</li>
-    <li>Télévision</li>
-    <li>Réfrigérateur</li>
-    <li>Ordinateur Portable</li>
+  <ul class="liste-produits" id="liste-produits">
+    <li><a href="#routeur-wifi">Routeur Wi-Fi</a></li>
+    <li><a href="#fer-a-souder">Fer à souder</a></li>
+    <li><a href="#multimetre-numerique">Multimètre numérique</a></li>
+    <li><a href="#cable-rj45">Câble RJ45</a></li>
+    <li><a href="#telephone">Téléphone</a></li>
+    <li><a href="#ventilateur">Ventilateur</a></li>
+    <li><a href="#climatiseur">Climatiseur</a></li>
+    <li><a href="#television">Télévision</a></li>
+    <li><a href="#refrigerateur">Réfrigérateur</a></li>
+    <li><a href="#ordinateur-portable">Ordinateur Portable</a></li>
   </ul>
 </section>
 
@@ -100,16 +131,16 @@
     <label for="produit">Produit :</label>
     <select id="produit" name="produit" required>
       <option value="">-- Choisir un produit --</option>
-      <option>Routeur Wi-Fi</option>
-      <option>Fer à souder</option>
-      <option>Multimètre</option>
-      <option>Câble RJ45</option>
-      <option>Téléphone</option>
-      <option>Ventilateur</option>
-      <option>Climatiseur</option>
-      <option>Télévision</option>
-      <option>Réfrigérateur</option>
-      <option>Ordinateur Portable</option>
+      <option value="Routeur Wi-Fi">Routeur Wi-Fi</option>
+      <option value="Fer à souder">Fer à souder</option>
+      <option value="Multimètre">Multimètre</option>
+      <option value="Câble RJ45">Câble RJ45</option>
+      <option value="Téléphone">Téléphone</option>
+      <option value="Ventilateur">Ventilateur</option>
+      <option value="Climatiseur">Climatiseur</option>
+      <option value="Télévision">Télévision</option>
+      <option value="Réfrigérateur">Réfrigérateur</option>
+      <option value="Ordinateur Portable">Ordinateur Portable</option>
     </select>
 
     <button type="submit">Envoyer</button>
@@ -122,23 +153,6 @@
   <p><strong>Téléphone :</strong> 77 056 73 92</p>
 </footer>
 
-<script>
-  function toggleMenu() {
-    const menuList = document.getElementById('menu-list');
-    menuList.classList.toggle('open');
-  }
-
-  function filtrerProduits() {
-    const input = document.getElementById('recherche-produit');
-    const filtre = input.value.toLowerCase();
-    const cartes = document.querySelectorAll('.carte-produit');
-
-    cartes.forEach(carte => {
-      const nomProduit = carte.querySelector('h3').textContent.toLowerCase();
-      carte.style.display = nomProduit.includes(filtre) ? 'block' : 'none';
-    });
-  }
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
