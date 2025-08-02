@@ -2,8 +2,8 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Boutique Telecom</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boutik Telecom</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -13,14 +13,11 @@
     <img src="images/logo.jpg" alt="Logo Boutik Telecom" class="logo" />
     <h1>Boutique Telecom</h1>
   </div>
-
   <nav>
-    <div class="menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu" tabindex="0">
-      <span></span>
-      <span></span>
-      <span></span>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
     </div>
-    <ul id="menu">
+    <ul id="menu-list">
       <li><a href="#accueil">Accueil</a></li>
       <li><a href="#produits">Produits</a></li>
       <li><a href="#galerie">Galerie</a></li>
@@ -34,6 +31,7 @@
   <p>Votre boutique de référence pour le matériel électronique et télécom !</p>
   <p><strong>Adresse :</strong> Mbour, Marché central</p>
   <p><strong>Contact :</strong> 77 056 73 92</p>
+  <button class="menu-btn" onclick="document.getElementById('produits').scrollIntoView({behavior: 'smooth'})">Voir nos produits</button>
 </section>
 
 <section id="produits">
@@ -80,22 +78,35 @@
       <p>TV LED HD 32 pouces - 75 000 FCFA</p>
     </div>
     <div class="carte-produit">
-      <img src="images/frigo.jpg" alt="Réfrigérateur" />
+      <img src="images/frigo.jpg" alt="Frigo" />
       <h3>Réfrigérateur</h3>
       <p>Frigo double porte - 120 000 FCFA</p>
     </div>
     <div class="carte-produit">
-      <img src="images/ordinateur.jpg" alt="Ordinateur Portable" />
+      <img src="images/ordinateur.jpg" alt="Ordinateur portable" />
       <h3>Ordinateur Portable</h3>
       <p>Core i5, 8Go RAM, 256Go SSD - 190 000 FCFA</p>
     </div>
   </div>
+
+  <ul class="liste-produits">
+    <li>Routeur Wi-Fi</li>
+    <li>Fer à souder</li>
+    <li>Multimètre</li>
+    <li>Câble RJ45</li>
+    <li>Téléphone</li>
+    <li>Ventilateur</li>
+    <li>Climatiseur</li>
+    <li>Télévision</li>
+    <li>Réfrigérateur</li>
+    <li>Ordinateur Portable</li>
+  </ul>
 </section>
 
 <section id="galerie">
   <h2>Galerie</h2>
   <div class="galerie">
-    <img src="images/routeur.jpg" alt="Routeur Wi-Fi" />
+    <img src="images/routeur.jpg" alt="Routeur" />
     <img src="images/fer_souder.jpg" alt="Fer à souder" />
     <img src="images/multimetre.jpg" alt="Multimètre" />
     <img src="images/cabale_rj.jpg" alt="Câble RJ45" />
@@ -103,7 +114,7 @@
     <img src="images/ventilateur.jpg" alt="Ventilateur" />
     <img src="images/climatiseur.jpg" alt="Climatiseur" />
     <img src="images/television.jpg" alt="Télévision" />
-    <img src="images/frigo.jpg" alt="Réfrigérateur" />
+    <img src="images/frigo.jpg" alt="Frigo" />
     <img src="images/ordinateur.jpg" alt="Ordinateur Portable" />
   </div>
 </section>
@@ -137,11 +148,16 @@
 </section>
 
 <footer>
-  <p>&copy; 2025 Boutique Telecom. Tous droits réservés.</p>
+  <p>&copy; 2025 Boutik Telecom. Tous droits réservés.</p>
   <p><strong>Adresse :</strong> Mbour, Marché central</p>
-  <p><strong>Contact :</strong> 77 056 73 92</p>
+  <p><strong>Téléphone :</strong> 77 056 73 92</p>
 </footer>
 
-<script src="script.js"></script>
+<script>
+  function toggleMenu() {
+    const menuList = document.getElementById('menu-list');
+    menuList.classList.toggle('open');
+  }
+</script>
 </body>
 </html>
