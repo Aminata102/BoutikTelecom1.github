@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Boutique Telecom</title>
+  <title>Boutik Telecom</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -11,11 +11,10 @@
   <header>
     <div class="logo-container">
       <img src="images/logo.jpg" alt="Logo Boutik Telecom" class="logo" />
-      <h1>Boutique Telecom</h1>
+      <h1 style="text-align: center;">Boutik Telecom</h1>
     </div>
     <nav>
-      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-      <ul id="menu">
+      <ul>
         <li><a href="#accueil">Accueil</a></li>
         <li><a href="#produits">Produits</a></li>
         <li><a href="#galerie">Galerie</a></li>
@@ -25,39 +24,82 @@
   </header>
 
   <section id="accueil">
-    <div class="accueil-contenu">
-      <h2>Bienvenue chez <span>Boutique Telecom</span></h2>
-      <p>Votre boutique de référence pour le matériel électronique et télécom</p>
-      <a href="#produits" class="btn-voir">Voir les produits</a>
-    </div>
+    <h2 style="text-align: center;">Bienvenue chez Boutique Télécom</h2>
+    <p>Votre boutique de référence pour le matériel électronique et télécom !</p>
+    <p><strong>Adresse :</strong> Mbour, Marché central</p>
+    <p><strong>Contact :</strong> 77 056 73 92</p>
   </section>
 
   <section id="produits">
-    <h2>Nos Produits</h2>
+    <h2 style="text-align: center;">Nos Produits</h2>
     <div class="produits">
-      <!-- Exemple de produit -->
       <div class="carte-produit">
         <img src="images/routeur.jpg" alt="Routeur Wi-Fi" />
         <h3>Routeur Wi-Fi</h3>
         <p>Routeur haute performance - 25 000 FCFA</p>
       </div>
-      <!-- Autres produits... -->
-      <!-- Ajoute ici les autres blocs produits similaires -->
+      <div class="carte-produit">
+        <img src="images/fer_souder.jpg" alt="Fer à souder" />
+        <h3>Fer à souder</h3>
+        <p>Idéal pour vos montages électroniques - 5 000 FCFA</p>
+      </div>
+      <div class="carte-produit">
+        <img src="images/multimetre.jpg" alt="Multimètre" />
+        <h3>Multimètre numérique</h3>
+        <p>Mesure précise - 8 000 FCFA</p>
+      </div>
+      <div class="carte-produit">
+        <img src="images/cabale_rj.jpg" alt="Câble RJ45" />
+        <h3>Câble RJ45</h3>
+        <p>Câble Ethernet haute qualité - 2 500 FCFA</p>
+      </div>
+
+      <!-- Nouveaux produits -->
+      <div class="carte-produit">
+        <img src="images/telephone.jpg" alt="Téléphone" />
+        <h3>Téléphone</h3>
+        <p>Smartphone dernière génération - 85 000 FCFA</p>
+      </div>
+      <div class="carte-produit">
+        <img src="images/ventilateur.jpg" alt="Ventilateur" />
+        <h3>Ventilateur</h3>
+        <p>Ventilateur électrique puissant - 25 000 FCFA</p>
+      </div>
+      <div class="carte-produit">
+        <img src="images/climatiseur.jpg" alt="Climatiseur" />
+        <h3>Climatiseur</h3>
+        <p>Climatiseur Split silencieux - 150 000 FCFA</p>
+      </div>
+      <div class="carte-produit">
+        <img src="images/television.jpg" alt="Télévision" />
+        <h3>Télévision</h3>
+        <p>TV LED HD 32 pouces - 75 000 FCFA</p>
+      </div>
+      <div class="carte-produit">
+        <img src="images/frigo.jpg" alt="Frigo" />
+        <h3>Réfrigérateur</h3>
+        <p>Frigo double porte - 120 000 FCFA</p>
+      </div>
+      <div class="carte-produit">
+        <img src="images/ordinateur.jpg" alt="Ordinateur portable" />
+        <h3>Ordinateur Portable</h3>
+        <p>Core i5, 8Go RAM, 256Go SSD - 190 000 FCFA</p>
+      </div>
     </div>
   </section>
 
   <section id="galerie">
-    <h2>Galerie</h2>
+    <h2 style="text-align: center;">Galerie</h2>
     <div class="galerie">
       <img src="images/routeur.jpg" alt="Routeur" />
       <img src="images/fer_souder.jpg" alt="Fer à souder" />
       <img src="images/multimetre.jpg" alt="Multimètre" />
-      <!-- Autres images... -->
+      <img src="images/cabale_rj.jpg" alt="Câble RJ45" />
     </div>
   </section>
 
   <section id="commande">
-    <h2>Passer une commande</h2>
+    <h2 style="text-align: center;">Passer une commande</h2>
     <form>
       <label for="nom">Nom :</label>
       <input type="text" id="nom" name="nom" required />
@@ -69,7 +111,15 @@
       <select id="produit" name="produit" required>
         <option value="">-- Choisir un produit --</option>
         <option value="Routeur Wi-Fi">Routeur Wi-Fi</option>
-        <!-- Autres options... -->
+        <option value="Fer à souder">Fer à souder</option>
+        <option value="Multimètre">Multimètre</option>
+        <option value="Câble RJ45">Câble RJ45</option>
+        <option value="Téléphone">Téléphone</option>
+        <option value="Ventilateur">Ventilateur</option>
+        <option value="Climatiseur">Climatiseur</option>
+        <option value="Télévision">Télévision</option>
+        <option value="Réfrigérateur">Réfrigérateur</option>
+        <option value="Ordinateur Portable">Ordinateur Portable</option>
       </select>
 
       <button type="submit">Envoyer</button>
@@ -77,7 +127,7 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 Boutique Telecom. Tous droits réservés.</p>
+    <p>&copy; 2025 Boutik Telecom. Tous droits réservés.</p>
     <p><strong>Adresse :</strong> Mbour, Marché central</p>
     <p><strong>Téléphone :</strong> 77 056 73 92</p>
   </footer>
